@@ -1,0 +1,48 @@
+services:
+  rag:
+    build: .
+    env_file:
+      - .env
+    command: python index.py
+
+  api:
+    build: .
+    env_file:
+      - .env
+    command: uvicorn server:app --host 0.0.0.0 --port 8000
+    depends_on:
+      - vector-db
+      - valkey
+    ports:
+      - "8000:8000"
+
+  worker:
+    build: .
+    env_file:
+      - .env
+    command: rq worker
+    depends_on:
+      - vector-db
+      - valkey
+    environment:
+      - OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+  frontend:
+    build: .
+    env_file:
+      - .env
+    command: python gradio_app.py
+    depends_on:
+      - api
+    ports:
+      - "7860:7860"
+
+  vector-db:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"
+
+  valkey:
+    image: valkey/valkey
+    ports:
+      - "6379:6379"
