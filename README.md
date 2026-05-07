@@ -127,8 +127,6 @@ If no tool is required, the LLM generates a normal conversational response.
 - Docker
 - Docker Compose
 
----
-
 ## 🐳 Docker Setup
 
 #### Build Containers
