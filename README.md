@@ -11,12 +11,12 @@ This project focuses on answering questions related to Node.js documentation usi
 
 #### search_pdf
 
-What is the Node.js?
-How to install Node.js?
+- What is the Node.js?
+- How to install Node.js?
 
 #### get_weather
 
-What is the weather in Bangkok?
+- What is the weather in Bangkok?
 
 ## 🚀 Features
 
