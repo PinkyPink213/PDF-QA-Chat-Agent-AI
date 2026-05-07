@@ -196,6 +196,15 @@ Retrieve generated AI response from worker queue.
 
 ---
 
+## 📦 Services
+
+- FastAPI API Server
+- Worker Queue
+- Valkey / Redis
+- Qdrant Vector Database
+
+---
+
 ## 🔄 Async Queue Workflow
 
 ```
