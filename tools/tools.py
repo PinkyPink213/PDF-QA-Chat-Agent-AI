@@ -11,19 +11,17 @@ load_dotenv()
 
 openai_client = OpenAI()
 
-def get_vector_db():
+# Embeddings
+embedding_model = OpenAIEmbeddings(
+    model="text-embedding-3-large"
+)
 
-    embedding_model = OpenAIEmbeddings(
-        model="text-embedding-3-large"
-    )
-
-    vector_db = QdrantVectorStore.from_existing_collection(
-        url="http://vector-db:6333",
-        collection_name="learning_rag",
-        embedding=embedding_model,
-    )
-
-    return vector_db
+# Vector DB
+vector_db = QdrantVectorStore.from_existing_collection(
+    url="http://vector-db:6333",
+    collection_name="learning_rag",
+    embedding=embedding_model,
+)
 
 def get_weather(city: str):
 
@@ -70,7 +68,6 @@ def search_pdf(query: str):
 
     # 1. expand query
     queries = query_expansion(query)
-    vector_db = get_vector_db()
 
     all_results = []
 
