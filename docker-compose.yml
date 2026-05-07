@@ -4,7 +4,10 @@ services:
     env_file:
       - .env
     command: python index.py
-
+    depends_on:
+      - vector-db
+      - valkey
+      - api
   worker:
     build: .
     env_file:
@@ -13,6 +16,7 @@ services:
     depends_on:
       - vector-db
       - valkey
+      - api
     environment:
       - OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
@@ -20,7 +24,7 @@ services:
     build: .
     env_file:
       - .env
-    command: uvicorn server:app --host 0.0.0.0 --port 8000
+    command: fastapi run server.py
     depends_on:
       - vector-db
       - valkey
