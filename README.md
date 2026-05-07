@@ -2,6 +2,8 @@
 
 ![app img](./img/Screenshot1.png)
 
+#### Demo Link: [http://34.80.35.23:7860/](http://34.80.35.23:7860/)
+
 An AI-powered PDF Question Answering Chat Agent built with Retrieval-Augmented Generation (RAG), LangChain, and LangGraph.
 This project focuses on answering questions related to Node.js documentation using advanced retrieval techniques, async worker queues, and tool-based AI routing.
 
