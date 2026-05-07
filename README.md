@@ -5,8 +5,6 @@
 An AI-powered PDF Question Answering Chat Agent built with Retrieval-Augmented Generation (RAG), LangChain, and LangGraph.
 This project focuses on answering questions related to Node.js documentation using advanced retrieval techniques, async worker queues, and tool-based AI routing.
 
----
-
 ## 📘 Example Questions
 
 #### search_pdf
@@ -17,8 +15,6 @@ How to install Node.js?
 #### get_weather
 
 What is the weather in Bangkok?
-
----
 
 ## 🚀 Features
 
@@ -34,8 +30,6 @@ What is the weather in Bangkok?
 - 🧩 FastAPI backend APIs
 - 🐳 Docker & Docker Compose support
 - ✅ Pydantic request/response validation
-
----
 
 ## 🏗️ System Architecture
 
@@ -105,8 +99,6 @@ Fetches weather information using external weather APIs.
 
 If no tool is required, the LLM generates a normal conversational response.
 
----
-
 ## 🧰 Tech Stack
 
 #### Backend
@@ -151,8 +143,6 @@ docker compose build
 docker compose up -d
 ```
 
----
-
 ## ⚙️ API Endpoints
 
 ![app img](./img/Screenshot2.png)
@@ -194,16 +184,12 @@ Retrieve generated AI response from worker queue.
 }
 ```
 
----
-
 ## 📦 Services
 
 - FastAPI API Server
 - Worker Queue
 - Valkey / Redis
 - Qdrant Vector Database
-
----
 
 ## 🔄 Async Queue Workflow
 
@@ -229,8 +215,6 @@ Store Result
 Client polls /job-status
 ```
 
----
-
 ## 🎯 Key Concepts Implemented
 
 - Retrieval-Augmented Generation (RAG)
@@ -243,8 +227,6 @@ Client polls /job-status
 - Agentic Workflow
 - Vector Similarity Search
 - Queue-based AI Architecture
-
----
 
 ### 👨‍💻 Author
 
